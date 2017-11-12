@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Liste Produits</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-2">
+			<p>Sidebar</p>
+		</div>
+		<div class="col-md-10">
+			<h1>This is page for list product</h1>
+			<table class="table table-striped">
+				<thead>
+					<th>#</th>
+					<th>Nom</th>
+					<th>Prix</th>
+					<th>Photo</th>
+				</thead>
+				<tbody>
+					<tr th:each="produit : ${produits}">
+						<td th:text="${produit.id}"></td>
+						<td th:text="${produit.nom}"></td>
+						<td th:text="${produit.prix}"></td>
+						<td th:text="${produit.photo}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</body>
+</html>
